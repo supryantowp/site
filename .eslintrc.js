@@ -8,6 +8,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -16,11 +17,13 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'simple-import-sort'],
+  plugins: ['react', '@typescript-eslint', 'simple-import-sort'],
   rules: {
+    '@typescript-eslint/no-unused-vars': ['warn'],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    'simple-import-sort/sort': 'error',
     'react/prop-types': ['off'],
+    'react/display-name': 'off',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
