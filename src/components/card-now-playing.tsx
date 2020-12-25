@@ -7,10 +7,6 @@ import fetcher from '@/lib/fetcher';
 const CardNowPlaying = () => {
   const { data } = useSWR('/api/now-playing', fetcher);
 
-  if (!data) {
-    return <Text>Loading...</Text>;
-  }
-
   return (
     <HStack
       as="a"
