@@ -17,7 +17,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'simple-import-sort'],
+  plugins: ['react', '@typescript-eslint', 'simple-import-sort', 'import'],
   rules: {
     '@typescript-eslint/no-unused-vars': ['warn'],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -32,6 +32,11 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ],
+    'simple-import-sort/sort': ['error'],
+    'sort-imports': 'off',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
   },
   settings: {
     react: {

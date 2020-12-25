@@ -1,16 +1,17 @@
-import Head from 'next/head';
+import { Stack } from '@chakra-ui/react';
 
-import styles from '@/styles/Home.module.css';
+import Intro from '@/components/intro';
+import LatestBlog from '@/components/latest-blog';
+import LatestProject from '@/components/latest-project';
 
-const homePage = () => (
-  <div className={styles.container}>
-    <Head>
-      <title>Supryanto Widadi Putra</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+const HomePage = () => {
+  return (
+    <Stack py={8} px={{ base: 5, md: 40 }} maxW="1000px" mx="auto" spacing={10}>
+      <Intro />
+      <LatestBlog />
+      <LatestProject />
+    </Stack>
+  );
+};
 
-    <h1>Helo</h1>
-  </div>
-)
-
-export default homePage
+export default HomePage;
