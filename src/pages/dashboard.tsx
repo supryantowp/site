@@ -14,6 +14,7 @@ const metaTags = {
 const Dashboard = () => {
   return (
     <Stack py={8} px={{ base: 5, md: 40 }} maxW="1000px" mx="auto" spacing={10}>
+      <NextSeo {...metaTags} />
       <TitleSeperator {...metaTags} />
       <ListStatic />
       <ListTopTrack />

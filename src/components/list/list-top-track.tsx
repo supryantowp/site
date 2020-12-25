@@ -6,10 +6,6 @@ import Fetcher from '@/lib/fetcher';
 const ListTopTrack = () => {
   const { data } = useSWR('/api/top-track', Fetcher);
 
-  if (!data) {
-    return <Text>Loading...</Text>;
-  }
-
   return (
     <Stack spacing={6}>
       <Flex direction="column">
@@ -19,7 +15,7 @@ const ListTopTrack = () => {
         </Text>
       </Flex>
 
-      {data.tracks.map((track, index) => (
+      {data?.tracks.map((track, index) => (
         <div key={track.songUrl}>
           <Flex py={4} as="a" href={track.songUrl} target="_blank">
             <Text mr={4}>{index + 1}.</Text>
