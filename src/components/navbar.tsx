@@ -26,6 +26,7 @@ const Navbar = () => {
       py={10}
       borderTop="5px solid #09dddc"
       background={colorMode === 'dark' ? 'gray.800' : 'white'}
+      zIndex={2}
     >
       <HStack spacing={{ base: 4, md: 8 }}>
         {routes.map(([text, href]) => (

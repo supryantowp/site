@@ -1,7 +1,13 @@
 import { Heading, Stack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-const ListBlog = () => {
+interface ListBlogProps {
+  title: string;
+  summary: string;
+  slug: string;
+}
+
+const ListBlog = ({ title, summary, slug }: ListBlogProps) => {
   return (
     <Stack as="a" _hover={{ cursor: 'pointer' }} role="group" spacing={1}>
       <Stack
@@ -9,10 +15,9 @@ const ListBlog = () => {
         justify="space-between"
         spacing={4}
       >
-        <NextLink href="/blog/mantap" passHref>
+        <NextLink href={`/blog/${slug}`} passHref>
           <Heading fontSize="xl" variant="link">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam,
-            modi.
+            {title}
           </Heading>
         </NextLink>
         <Text color="gray.600">2/12/2020</Text>
@@ -26,10 +31,7 @@ const ListBlog = () => {
         }}
         color="gray.500"
       >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nostrum
-        illo minus? Impedit maxime tempore quasi ea numquam enim excepturi
-        provident praesentium consequuntur deserunt a nobis culpa labore,
-        assumenda mollitia?
+        {summary}
       </Text>
     </Stack>
   );
