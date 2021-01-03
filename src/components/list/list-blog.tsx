@@ -1,16 +1,27 @@
-import { Heading, Stack, Text } from '@chakra-ui/react';
+import { Heading, Stack, Text, useColorMode } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 const ListBlog = () => {
+  const { colorMode } = useColorMode();
+
   return (
-    <Stack as="a" _hover={{ cursor: 'pointer' }} role="group" spacing={1}>
+    <Stack
+      as="a"
+      _hover={{ cursor: 'pointer', shadow: 'md' }}
+      role="group"
+      spacing={1}
+      border={`1px solid ${colorMode === 'dark' ? '#2D3748' : '#E2E8F0'}`}
+      bgColor={colorMode === 'dark' ? 'gray.800' : 'white'}
+      p={6}
+      borderRadius="md"
+    >
       <Stack
         direction={{ base: 'column', md: 'row' }}
         justify="space-between"
         spacing={4}
       >
         <NextLink href="/blog/mantap" passHref>
-          <Heading fontSize="xl" variant="link">
+          <Heading fontSize="xl">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam,
             modi.
           </Heading>

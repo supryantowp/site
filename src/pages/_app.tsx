@@ -7,7 +7,7 @@ import Navbar from '@/components/navbar';
 import theme from '@/styles/theme';
 import { defaultSeo, socialProfile } from '~/next-seo.config';
 
-export default function ({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider resetCSS theme={theme}>
       <DefaultSeo {...defaultSeo} />
@@ -17,4 +17,6 @@ export default function ({ Component, pageProps }: AppProps) {
       <Footer />
     </ChakraProvider>
   );
-}
+};
+
+export default App;
